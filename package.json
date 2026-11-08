@@ -2,13 +2,17 @@
   "name": "antigravity-ide-chat-toggle",
   "displayName": "Antigravity IDE Chat Toggle",
   "description": "One-click button and shortcut to toggle the Antigravity IDE Chat / Panel between full screen and split view.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "publisher": "sandheeprao",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/sandeepisconscious-create/antigravity-ide-chat-toggle"
   },
+  "bugs": {
+    "url": "https://github.com/sandeepisconscious-create/antigravity-ide-chat-toggle/issues"
+  },
+  "homepage": "https://github.com/sandeepisconscious-create/antigravity-ide-chat-toggle#readme",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -29,7 +33,10 @@
   "activationEvents": [
     "*"
   ],
-  "main": "./extension.js",
+  "main": "./src/extension.js",
+  "scripts": {
+    "test": "node test/suite.js"
+  },
   "contributes": {
     "commands": [
       {
@@ -37,6 +44,16 @@
         "title": "Toggle Full Chat / Split View",
         "category": "Antigravity IDE",
         "icon": "$(screen-full)"
+      },
+      {
+        "command": "antigravity-chat-toggle.maximize",
+        "title": "Expand Chat to Full Screen",
+        "category": "Antigravity IDE"
+      },
+      {
+        "command": "antigravity-chat-toggle.restore",
+        "title": "Restore Split View",
+        "category": "Antigravity IDE"
       }
     ],
     "menus": {
@@ -55,6 +72,30 @@
         "win": "ctrl+shift+m",
         "linux": "ctrl+shift+m"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Antigravity IDE Chat Toggle",
+      "properties": {
+        "antigravityChatToggle.showStatusBarButton": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the Full Chat / Split View button on the status bar."
+        },
+        "antigravityChatToggle.statusBarAlignment": {
+          "type": "string",
+          "enum": [
+            "right",
+            "left"
+          ],
+          "default": "right",
+          "description": "Alignment of the button on the status bar."
+        },
+        "antigravityChatToggle.statusBarPriority": {
+          "type": "number",
+          "default": 1000,
+          "description": "Priority of the status bar item (higher value places it closer to the edge)."
+        }
+      }
+    }
   }
 }
