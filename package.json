@@ -24,7 +24,7 @@
     "ai"
   ],
   "activationEvents": [
-    "onStartupFinished"
+    "*"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -32,9 +32,18 @@
       {
         "command": "antigravity-chat-toggle.toggle",
         "title": "Toggle Full Screen Chat",
-        "category": "Antigravity Chat"
+        "category": "Antigravity Chat",
+        "icon": "$(screen-full)"
       }
     ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "antigravity-chat-toggle.toggle",
+          "group": "navigation@1"
+        }
+      ]
+    },
     "keybindings": [
       {
         "command": "antigravity-chat-toggle.toggle",
