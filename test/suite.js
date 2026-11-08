@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 'use strict';
 
 const assert = require('assert');
@@ -37,8 +37,6 @@ assert.ok(LABELS.SPLIT_VIEW.includes('Split View'), 'Label should include Split 
 console.log('✓ Constants integrity test passed');
 
 // Test 2: Verify State Transitions with Mocked VS Code API
-// Mock the vscode module for isolated unit testing
-const mockDisposables = [];
 const mockCommands = new Map();
 const mockEventEmitters = [];
 
@@ -51,9 +49,11 @@ class MockEventEmitter {
     };
     mockEventEmitters.push(this);
   }
+
   fire(data) {
     this._listeners.forEach((fn) => fn(data));
   }
+
   dispose() {}
 }
 
@@ -92,11 +92,9 @@ const mockVscode = {
   EventEmitter: MockEventEmitter
 };
 
-// Inject mock into require cache
+// Inject mock into require cache for isolated unit test
 const Module = require('module');
-// @ts-ignore
 const originalRequire = Module.prototype.require;
-// @ts-ignore
 Module.prototype.require = function (path) {
   if (path === 'vscode') {
     return mockVscode;
