@@ -1,7 +1,7 @@
 {
   "name": "antigravity-chat-toggle",
   "displayName": "Antigravity Chat Toggle",
-  "description": "One-click button and shortcut to expand the Antigravity chat window to full screen and return to split view.",
+  "description": "One-click button and shortcut to toggle the Antigravity Chat / Panel between full screen and split view.",
   "version": "1.0.1",
   "publisher": "sandheeprao",
   "license": "MIT",
@@ -18,6 +18,8 @@
   "keywords": [
     "antigravity",
     "chat",
+    "panel",
+    "sidebar",
     "maximize",
     "split view",
     "full screen",

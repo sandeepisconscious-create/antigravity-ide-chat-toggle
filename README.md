@@ -1,6 +1,6 @@
 # Antigravity Chat Toggle
 
-A lightweight, zero-dependency extension for **Antigravity IDE** (and VS Code) that gives you a quick **one-click button** and shortcut to expand the AI chat window to full screen and return to split view.
+One-click button and shortcut to toggle the Antigravity Chat / Panel between full screen and split view.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 
@@ -9,7 +9,7 @@ A lightweight, zero-dependency extension for **Antigravity IDE** (and VS Code) t
 ## Features
 
 - 🖱️ **One-Click Toggle Button**: Adds a status bar button to instantly toggle between full-screen chat and split view:
-  - **`Full Chat`** — Collapses the editor and expands Antigravity chat across the full screen.
+  - **`Full Chat`** — Collapses the editor and expands Antigravity Chat / Panel across the full screen.
   - **`Split View`** — Restores the code editor and returns to side-by-side split view.
 - ⌨️ **Keyboard Shortcut**: Press `Cmd + Shift + M` (macOS) or `Ctrl + Shift + M` (Windows / Linux) to toggle instantly from anywhere.
 - ⚡ **Zero Dependencies**: Pure vanilla JavaScript implementation. Runs immediately with no build steps or compile dependencies.
@@ -80,7 +80,7 @@ To rebind to a different shortcut, open **Preferences: Open Keyboard Shortcuts (
 
 ## Technical Details
 
-Antigravity Chat runs within the IDE's Auxiliary Bar (Secondary Side Bar). This extension interfaces with the workbench action `workbench.action.toggleMaximizedAuxiliaryBar`, managing state dynamically and updating label indicators and accessibility tooltips on each transition.
+Antigravity Chat runs within the IDE's Auxiliary Bar (Secondary Side Bar) under the view container `antigravity.panel`. This extension interfaces with the workbench action `workbench.action.toggleMaximizedAuxiliaryBar`, managing state dynamically and updating label indicators and accessibility tooltips on each transition.
 
 ---
 
