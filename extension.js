@@ -10,11 +10,11 @@ function updateButtonState() {
   if (!statusBarButton) return;
 
   if (isMaximized) {
-    statusBarButton.text = '$(screen-normal) Restore Chat';
-    statusBarButton.tooltip = 'Click to restore editor and normal split view';
+    statusBarButton.text = '$(screen-normal) Split View';
+    statusBarButton.tooltip = 'Return to code editor & split view (⌘+Shift+M)';
   } else {
-    statusBarButton.text = '$(screen-full) Expand Chat';
-    statusBarButton.tooltip = 'Click to expand Antigravity chat to full screen';
+    statusBarButton.text = '$(screen-full) Full Chat';
+    statusBarButton.tooltip = 'Expand Antigravity chat to full screen (⌘+Shift+M)';
   }
 }
 
