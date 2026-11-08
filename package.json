@@ -1,0 +1,48 @@
+{
+  "name": "antigravity-chat-toggle",
+  "displayName": "Antigravity Chat Toggle",
+  "description": "One-click button and shortcut to expand the Antigravity chat window to full screen and restore normal split view.",
+  "version": "1.0.0",
+  "publisher": "sandheeprao",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sandheeprao/antigravity-chat-toggle"
+  },
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "antigravity",
+    "chat",
+    "maximize",
+    "collapse",
+    "full screen",
+    "ai"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "antigravity-chat-toggle.toggle",
+        "title": "Toggle Full Screen Chat",
+        "category": "Antigravity Chat"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "antigravity-chat-toggle.toggle",
+        "key": "cmd+shift+m",
+        "mac": "cmd+shift+m",
+        "win": "ctrl+shift+m",
+        "linux": "ctrl+shift+m"
+      }
+    ]
+  }
+}
