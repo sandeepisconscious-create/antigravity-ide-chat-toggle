@@ -11,10 +11,10 @@ function updateButtonState() {
 
   if (isMaximized) {
     statusBarButton.text = '$(screen-normal) Split View';
-    statusBarButton.tooltip = 'Return to code editor & split view (⌘+Shift+M)';
+    statusBarButton.tooltip = 'Return to code editor & split view in Antigravity IDE (⌘+Shift+M)';
   } else {
     statusBarButton.text = '$(screen-full) Full Chat';
-    statusBarButton.tooltip = 'Expand Antigravity chat to full screen (⌘+Shift+M)';
+    statusBarButton.tooltip = 'Expand Antigravity IDE chat to full screen (⌘+Shift+M)';
   }
 }
 
@@ -35,7 +35,7 @@ function activate(context) {
         updateButtonState();
       } catch (err) {
         vscode.window.showErrorMessage(
-          `Unable to toggle chat window: ${err && err.message ? err.message : err}`
+          `Unable to toggle Antigravity IDE chat window: ${err && err.message ? err.message : err}`
         );
       }
     }

@@ -1,13 +1,13 @@
 {
-  "name": "antigravity-chat-toggle",
-  "displayName": "Antigravity Chat Toggle",
-  "description": "One-click button and shortcut to toggle the Antigravity Chat / Panel between full screen and split view.",
+  "name": "antigravity-ide-chat-toggle",
+  "displayName": "Antigravity IDE Chat Toggle",
+  "description": "One-click button and shortcut to toggle the Antigravity IDE Chat / Panel between full screen and split view.",
   "version": "1.0.1",
   "publisher": "sandheeprao",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sandheeprao/antigravity-chat-toggle"
+    "url": "https://github.com/sandheeprao/antigravity-ide-chat-toggle"
   },
   "engines": {
     "vscode": "^1.80.0"
@@ -16,6 +16,7 @@
     "Other"
   ],
   "keywords": [
+    "antigravity-ide",
     "antigravity",
     "chat",
     "panel",
@@ -34,7 +35,7 @@
       {
         "command": "antigravity-chat-toggle.toggle",
         "title": "Toggle Full Chat / Split View",
-        "category": "Antigravity Chat",
+        "category": "Antigravity IDE",
         "icon": "$(screen-full)"
       }
     ],
