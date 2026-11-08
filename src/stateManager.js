@@ -9,6 +9,8 @@ class StateManager {
   constructor() {
     /** @type {boolean} */
     this._isMaximized = false;
+    /** @type {boolean} */
+    this._isToggling = false;
     /** @type {vscode.EventEmitter<boolean>} */
     this._onDidChangeState = new vscode.EventEmitter();
     /** @type {vscode.Event<boolean>} */
@@ -24,11 +26,19 @@ class StateManager {
   }
 
   /**
-   * Toggles between full-screen chat and normal split view.
+   * Toggles between full-screen chat and normal split view with re-entrancy guard.
    * @returns {Promise<boolean>} Resulting maximized state.
    */
   async toggle() {
+    // Guard against race conditions and rapid double-invocation
+    if (this._isToggling) {
+      logger.info('Toggle command already in progress; ignoring re-entrant invocation');
+      return this._isMaximized;
+    }
+
+    this._isToggling = true;
     logger.info(`Toggling chat view (currently maximized: ${this._isMaximized})`);
+
     try {
       await vscode.commands.executeCommand(
         VSCODE_COMMANDS.TOGGLE_MAXIMIZED_AUXILIARY_BAR
@@ -41,6 +51,8 @@ class StateManager {
       logger.error('Failed to execute toggle command', err);
       this._showErrorNotification('Failed to toggle chat window', err);
       throw err;
+    } finally {
+      this._isToggling = false;
     }
   }
 
