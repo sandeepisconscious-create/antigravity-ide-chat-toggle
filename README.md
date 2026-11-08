@@ -8,6 +8,14 @@ One-click button and shortcut to toggle the **Antigravity IDE** Chat / Panel bet
 
 ---
 
+## Preview
+
+| Before: Split View (Normal Mode) | After: Full Chat (Focus Mode) |
+| :---: | :---: |
+| ![Before: Split View](assets/split-view.jpg) | ![After: Full Chat](assets/full-chat.jpg) |
+
+---
+
 ## Features
 
 - 🖱️ **One-Click Toggle Button**: Adds a status bar button in **Antigravity IDE** to instantly toggle between full-screen chat and split view:
